@@ -1,0 +1,51 @@
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mInitial source changes: [0m
+[0m[[0mdebug[0m] [0m	removed:Set(/Users/geek/Workspaces/sbtexample/src/main/scala/net/imadz/sample/Truck.scala)[0m
+[0m[[0mdebug[0m] [0m	added: Set(/Users/geek/Workspaces/sbtexample/src/main/scala/net/imadz/scheduling/simulation/Truck.scala)[0m
+[0m[[0mdebug[0m] [0m	modified: Set()[0m
+[0m[[0mdebug[0m] [0mRemoved products: Set(/Users/geek/Workspaces/sbtexample/target/scala-2.11/classes/net/imadz/sample/Truck.class, /Users/geek/Workspaces/sbtexample/target/scala-2.11/classes/net/imadz/scheduling/simulation/impl/TruckResource.class)[0m
+[0m[[0mdebug[0m] [0mExternal API changes: API Changes: Set()[0m
+[0m[[0mdebug[0m] [0mModified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0mInitial directly invalidated sources: Set(/Users/geek/Workspaces/sbtexample/src/main/scala/net/imadz/scheduling/simulation/Truck.scala, /Users/geek/Workspaces/sbtexample/src/main/scala/net/imadz/sample/Truck.scala)[0m
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mSources indirectly invalidated by:[0m
+[0m[[0mdebug[0m] [0m	product: Set(/Users/geek/Workspaces/sbtexample/src/main/scala/net/imadz/sample/Truck.scala, /Users/geek/Workspaces/sbtexample/src/main/java/net/imadz/scheduling/simulation/impl/TruckResource.java)[0m
+[0m[[0mdebug[0m] [0m	binary dep: Set()[0m
+[0m[[0mdebug[0m] [0m	external source: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/Users/geek/Workspaces/sbtexample/src/main/scala/net/imadz/scheduling/simulation/Truck.scala, /Users/geek/Workspaces/sbtexample/src/main/scala/net/imadz/sample/Truck.scala, /Users/geek/Workspaces/sbtexample/src/main/java/net/imadz/scheduling/simulation/impl/TruckResource.java)[0m
+[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to /Users/geek/Workspaces/sbtexample/target/scala-2.11/classes...[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.11.1[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.11.1[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 10816c49, interfacing (CompilerInterface) with Scala compiler version 2.11.1[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/classes:/Users/geek/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.1.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/Users/geek/Workspaces/sbtexample/target/scala-2.11/classes:/Users/geek/Workspaces/sbtexample/lib/Lifecycle-0.9.2-SNAPSHOT.jar[0m
+[0m[[0mdebug[0m] [0mScala compilation took 3.140904 s[0m
+[0m[[0mdebug[0m] [0mAttempting to call javac directly...[0m
+[0m[[0mdebug[0m] [0mcom.sun.tools.javac.Main not found with appropriate method signature; forking javac instead[0m
+[0m[[0mdebug[0m] [0mForking javac: javac @/var/folders/bk/1t1l38_13gg67d47yp6mplkw0000gr/T/sbt_ec60c90d/argfile[0m
+[0m[[0mdebug[0m] [0mjavac returned exit code: 0[0m
+[0m[[0mdebug[0m] [0mJava compilation took 0.588933 s[0m
+[0m[[0mdebug[0m] [0mJava analysis took 0.071113 s[0m
+[0m[[0mdebug[0m] [0mInvalidating /Users/geek/Workspaces/sbtexample/src/main/scala/net/imadz/scheduling/simulation/Truck.scala...[0m
+[0m[[0mdebug[0m] [0mInvalidating (transitively) by inheritance from /Users/geek/Workspaces/sbtexample/src/main/scala/net/imadz/scheduling/simulation/Truck.scala...[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set(/Users/geek/Workspaces/sbtexample/src/main/scala/net/imadz/scheduling/simulation/Truck.scala)[0m
+[0m[[0mdebug[0m] [0mInvalidated by transitive inheritance dependency: Set(/Users/geek/Workspaces/sbtexample/src/main/scala/net/imadz/scheduling/simulation/Truck.scala)[0m
+[0m[[0mdebug[0m] [0mThe /Users/geek/Workspaces/sbtexample/src/main/scala/net/imadz/scheduling/simulation/Truck.scala source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m	notify, wait, doWork, $asInstanceOf, doFail, state, productArity, equals, asInstanceOf, synchronized, $isInstanceOf, doRecycle, doUndeploy, canEqual, doRelease, productPrefix, doDeploy, notifyAll, recordOldState, isInstanceOf, getState, <init>, id, lastState, ==, clone, doResume, getHistoryState, copy, toString, !=, Truck, getClass, copy$default$1, ne, getId, getLastState, eq, productIterator, ##, finalize, productElement, hashCode.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mInvalidating /Users/geek/Workspaces/sbtexample/src/main/scala/net/imadz/sample/Truck.scala...[0m
+[0m[[0mdebug[0m] [0mInvalidating (transitively) by inheritance from /Users/geek/Workspaces/sbtexample/src/main/scala/net/imadz/sample/Truck.scala...[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set(/Users/geek/Workspaces/sbtexample/src/main/scala/net/imadz/sample/Truck.scala)[0m
+[0m[[0mdebug[0m] [0mInvalidated by transitive inheritance dependency: Set(/Users/geek/Workspaces/sbtexample/src/main/scala/net/imadz/sample/Truck.scala)[0m
+[0m[[0mdebug[0m] [0mThe /Users/geek/Workspaces/sbtexample/src/main/scala/net/imadz/sample/Truck.scala source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m	notify, wait, doWork, $asInstanceOf, doFail, state, productArity, equals, asInstanceOf, synchronized, $isInstanceOf, doRecycle, doUndeploy, canEqual, doRelease, productPrefix, doDeploy, notifyAll, recordOldState, isInstanceOf, getState, <init>, id, lastState, ==, clone, doResume, getHistoryState, copy, toString, !=, Truck, getClass, copy$default$1, ne, getId, getLastState, eq, productIterator, ##, finalize, productElement, hashCode.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mNew invalidations:[0m
+[0m[[0mdebug[0m] [0m	Set()[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set()[0m
+[0m[[0mdebug[0m] [0mPreviously invalidated, but (transitively) depend on new invalidations:[0m
+[0m[[0mdebug[0m] [0m	Set()[0m
+[0m[[0mdebug[0m] [0mAll newly invalidated sources after taking into account (previously) recompiled sources:Set()[0m

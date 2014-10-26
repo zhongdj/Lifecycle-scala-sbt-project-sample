@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Lifecycle-scala-sbt-project-sample.iml" filepath="$PROJECT_DIR$/.idea/modules/Lifecycle-scala-sbt-project-sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sbtexample-build.iml" filepath="$PROJECT_DIR$/.idea/modules/sbtexample-build.iml" />
+    </modules>
+  </component>
+</project>
+

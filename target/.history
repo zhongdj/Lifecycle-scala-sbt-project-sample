@@ -1,0 +1,11 @@
+run
+exit
+clean compile
+clean
+compile
+!
+run
+compile
+reload
+hello
+reload
