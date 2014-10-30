@@ -150,33 +150,18 @@ sbt test
   import sbt.Keys._
   import sbt._
 
-  def toIvyHome: IvyPaths => String = _.ivyHome.get.getAbsolutePath
-
-  def toTargetClassDirectory: File => String = _.getAbsolutePath
-
-  def toClasspath: Seq[Attributed[File]] => String = {
-    case files => files.map(_.data).mkString(":")
-  }
-
-  lazy val weaveCommandPostfix: Project.Initialize[String] = ivyPaths {
-    toIvyHome
-  }.zipWith[String, String](classDirectory.in(Compile) {
-    toTargetClassDirectory
-  }) { (ivyHome, targetClassDirectory) =>
-    " -javaagent:" + ivyHome + "/cache/net.imadz/Lifecycle/jars/Lifecycle-"+ lifecycleVersion + ".jar -Dnet.imadz.bcel.save.original=true net.imadz.lifecycle.StaticWeaver " + targetClassDirectory
-  }
-
-  private def toWeaveBytecode: (Task[String], String) => Task[Analysis] = { (classpathEvaluationTask: Task[String], postfix: String) =>
-    classpathEvaluationTask.map[Analysis] { classpath =>
-      println("java -cp " + classpath + postfix !!)
+  lazy val weaveTask = (fullClasspath in Compile).zip(ivyPaths).zipWith(classDirectory in Compile) { case ((classpathTask, ivy), bin) =>
+    classpathTask.map { cp =>
+      println(mkCommand(classpath(cp))(ivy.ivyHome.get.getAbsolutePath)(bin.getAbsolutePath) !!)
       Analysis.Empty
     }
   }
 
-  lazy val weaveTask = (fullClasspath in (Compile) map toClasspath).zipWith(weaveCommandPostfix) {
-    toWeaveBytecode
-  }
+  def classpath(cp: Keys.Classpath): String = cp.map(_.data).mkString(":")
 
+  def mkCommand(classpath: String)(ivy: String)(targetDir: String): String = {
+    "java -cp " + classpath + " -javaagent:" + ivy + "/cache/net.imadz/Lifecycle/jars/Lifecycle-" + lifecycleVersion + ".jar -Dnet.imadz.bcel.save.original=true net.imadz.lifecycle.StaticWeaver " + targetDir
+  }
 
   lazy val membershipImpl = Project(
     id = "membership-impl",
