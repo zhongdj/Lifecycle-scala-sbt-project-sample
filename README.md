@@ -143,3 +143,55 @@ sbt test
 [success] Total time: 6 s, completed Oct 26, 2014 9:44:15 PM
 
 ```
+
+4. For sbt 0.12.2
+
+```
+  import sbt.Keys._
+  import sbt._
+
+  def toIvyHome: IvyPaths => String = _.ivyHome.get.getAbsolutePath
+
+  def toTargetClassDirectory: File => String = _.getAbsolutePath
+
+  def toClasspath: Seq[Attributed[File]] => String = {
+    case files => files.map(_.data).mkString(":")
+  }
+
+  lazy val weaveCommandPostfix: Project.Initialize[String] = ivyPaths {
+    toIvyHome
+  }.zipWith[String, String](classDirectory.in(Compile) {
+    toTargetClassDirectory
+  }) { (ivyHome, targetClassDirectory) =>
+    " -javaagent:" + ivyHome + "/cache/net.imadz/Lifecycle/jars/Lifecycle-"+ lifecycleVersion + ".jar -Dnet.imadz.bcel.save.original=true net.imadz.lifecycle.StaticWeaver " + targetClassDirectory
+  }
+
+  private def toWeaveBytecode: (Task[String], String) => Task[Analysis] = { (classpathEvaluationTask: Task[String], postfix: String) =>
+    classpathEvaluationTask.map[Analysis] { classpath =>
+      println("java -cp " + classpath + postfix !!)
+      Analysis.Empty
+    }
+  }
+
+  lazy val weaveTask = (fullClasspath in (Compile) map toClasspath).zipWith(weaveCommandPostfix) {
+    toWeaveBytecode
+  }
+
+
+  lazy val membershipImpl = Project(
+    id = "membership-impl",
+    base = file("modules/membership/impl")
+  ) settings(
+    scalaVersion := "2.10.0",
+    version := "1.0",
+    libraryDependencies ++= Seq(
+      lifecycle,
+      testlib
+    ),
+    libraryDependencies ++= springCore,
+    resolvers ++= baseResolvers,
+    compile <<= weaveTask,
+    test <<= test in Test dependsOn(clean, compile)
+    ) dependsOn (membershipApi % "compile->compile;test->test")
+
+```
